@@ -32,3 +32,4 @@ D:\OrderManagementSystem\Order_Management_System.Repository\obj\Debug\net6.0\ref
 D:\OrderManagementSystem\Order_Management_System.Repository\obj\Debug\net6.0\Order_Management_System.Repository.pdb
 D:\OrderManagementSystem\Order_Management_System.Repository\obj\Debug\net6.0\Order_Management_System.Repository.genruntimeconfig.cache
 D:\OrderManagementSystem\Order_Management_System.Repository\obj\Debug\net6.0\ref\Order_Management_System.Repository.dll
+D:\OrderManagementSystem\Order_Management_System.Repository\obj\Debug\net6.0\Order_Management_System.Repository.sourcelink.json

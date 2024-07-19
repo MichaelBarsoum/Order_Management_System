@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Order_Management_System.Repositories.Helpers;
+using Order_Management_System.CORE.Helpers;
 using Order_Management_System.Repositories.Models;
 using System;
 using System.Collections.Generic;

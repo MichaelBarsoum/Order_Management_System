@@ -57,10 +57,5 @@ namespace Order_Management_System.Services.Services.ORDER
                 TotalAmount *= 0.05m;
             return TotalAmount;
         }
-        
-
-
-
-
     }
 }

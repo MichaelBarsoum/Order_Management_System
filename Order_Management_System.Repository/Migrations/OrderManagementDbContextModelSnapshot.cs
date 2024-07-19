@@ -22,7 +22,7 @@ namespace Order_Management_System.Repository.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Order_Management_System.Repositories.Helpers.PaymentMethods", b =>
+            modelBuilder.Entity("Order_Management_System.CORE.Helpers.PaymentMethods", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -102,26 +102,21 @@ namespace Order_Management_System.Repository.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CustomerId")
-                        .IsRequired()
+                    b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PayMethod")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<int?>("PaymentMethodsId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("paymentMethodId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -129,7 +124,7 @@ namespace Order_Management_System.Repository.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("PaymentMethodsId");
+                    b.HasIndex("paymentMethodId");
 
                     b.ToTable("Orders");
                 });
@@ -265,11 +260,49 @@ namespace Order_Management_System.Repository.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Order_Management_System.Repositories.Helpers.PaymentMethods", null)
-                        .WithMany("orders")
-                        .HasForeignKey("PaymentMethodsId");
+                    b.HasOne("Order_Management_System.CORE.Helpers.PaymentMethods", "paymentMethod")
+                        .WithMany()
+                        .HasForeignKey("paymentMethodId");
+
+                    b.OwnsOne("Order_Management_System.CORE.Models.OrderAggregate.AddressAggregate", "Address", b1 =>
+                        {
+                            b1.Property<int>("OrderId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("City")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<string>("Country")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<string>("FirstName")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<string>("LastName")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<string>("Street")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.HasKey("OrderId");
+
+                            b1.ToTable("Orders");
+
+                            b1.WithOwner()
+                                .HasForeignKey("OrderId");
+                        });
+
+                    b.Navigation("Address")
+                        .IsRequired();
 
                     b.Navigation("Customer");
+
+                    b.Navigation("paymentMethod");
                 });
 
             modelBuilder.Entity("Order_Management_System.Repositories.Models.OrderItem", b =>
@@ -285,11 +318,6 @@ namespace Order_Management_System.Repository.Migrations
                     b.Navigation("Order");
 
                     b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("Order_Management_System.Repositories.Helpers.PaymentMethods", b =>
-                {
-                    b.Navigation("orders");
                 });
 
             modelBuilder.Entity("Order_Management_System.Repositories.Models.Customer", b =>

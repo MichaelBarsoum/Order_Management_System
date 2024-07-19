@@ -32,3 +32,4 @@ D:\OrderManagementSystem\Order_Management_System.Services\obj\Debug\net6.0\Order
 D:\OrderManagementSystem\Order_Management_System.Services\obj\Debug\net6.0\refint\Order_Management_System.Services.dll
 D:\OrderManagementSystem\Order_Management_System.Services\obj\Debug\net6.0\Order_Management_System.Services.pdb
 D:\OrderManagementSystem\Order_Management_System.Services\obj\Debug\net6.0\ref\Order_Management_System.Services.dll
+D:\OrderManagementSystem\Order_Management_System.Services\obj\Debug\net6.0\Order_Management_System.Services.sourcelink.json

@@ -31,7 +31,7 @@ namespace OrderManagementSystem.API.Controllers.Orders
         public async Task<ActionResult<Order>> CreateNewOrder(OrderDTO order)
         {
             if (order == null) return NotFound(new ApiErrorResponse(404, " No Order Found To Create it !"));
-            var MappedOrder = _mapper.Map<Order>(order);
+            var MappedOrder = _mapper.Map<OrderDTO, Order>(order);
             await _orderServices.CreateOrderAsync(MappedOrder);
             _orderState.HandleState(MappedOrder);
             return Ok(MappedOrder);

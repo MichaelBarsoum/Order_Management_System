@@ -166,3 +166,4 @@ D:\OrderManagementSystem\OrderManagementSystem.API\obj\Debug\net6.0\refint\Order
 D:\OrderManagementSystem\OrderManagementSystem.API\obj\Debug\net6.0\OrderManagementSystem.API.pdb
 D:\OrderManagementSystem\OrderManagementSystem.API\obj\Debug\net6.0\OrderManagementSystem.API.genruntimeconfig.cache
 D:\OrderManagementSystem\OrderManagementSystem.API\obj\Debug\net6.0\ref\OrderManagementSystem.API.dll
+D:\OrderManagementSystem\OrderManagementSystem.API\obj\Debug\net6.0\OrderManagementSystem.API.sourcelink.json

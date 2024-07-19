@@ -18,6 +18,7 @@ namespace Order_Management_System.CORE.Configurations
             builder.HasOne(OI => OI.Product).WithOne();
             builder.Property(OI => OI.UnitPrice).HasColumnType("decimal(18,2)");
             builder.Property(OI => OI.Discount).HasColumnType("decimal(18,2)");
+            // builder.OwnsOne(OI => OI.Product, OI => OI.WithOwner());
         }
     }
 }

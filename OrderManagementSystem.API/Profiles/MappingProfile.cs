@@ -16,31 +16,16 @@ namespace OrderManagementSystem.API.Profiles
                      .ForMember(C => C.CustomerId, S => S.MapFrom(S => S.Id))
                      .ForMember(C => C.Name, S => S.MapFrom(S => S.Name));
             CreateMap<OrderDTO, CustomerOrderToReturnDTO>();
-            // source    destination
             CreateMap<ProductDTO, Product>().ReverseMap();
             CreateMap<InvoiceDTO, Invoice>().ReverseMap();
-            //CreateMap<OrderDTO, Order>()
-            //        // Destination => Source 
-            //        .ForMember(dest => DateTime.Parse(dest.OrderDate.ToString()), opt => opt.MapFrom(src => src.OrderDate.ToString()))
-            //        .ForMember(dest => dest.PayMethod, opt => opt.MapFrom(src => src.PaymentMethod));
-                    //.ForMember(dest => dest.)
-            
-                    //.ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => new List<OrderItem>
-                    //{
-                    //    new OrderItem
-                    //    {
-                    //        Quantity = src.orderItems.Select(Q => Q.Quantity).FirstOrDefault(),
-
-
-                    //    }
-                    //}))
-                    //.ForMember(dest => dest.Customer, opt => opt.MapFrom(src => new Customer
-                    //{
-                    //    Name = src.CustomerName,
-                    //    Email = src.CustomerEmail
-                    //})).ReverseMap();
-
-
+            // source    destination
+            CreateMap<OrderDTO,Order>()
+                     .ForMember(dest => dest.Customer.Name ,opt => opt.MapFrom(src => src.CustomerName))
+                     .ForMember(dest => dest.Customer.Email, opt => opt.MapFrom(src => src.CustomerEmail))
+                     .ForMember(dest => dest.OrderItems.Select(O => O.Quantity),opt => opt.MapFrom(src => src.Quantity))
+                     .ForMember(dest => dest.OrderItems.Select(O => O.UnitPrice),opt => opt.MapFrom(src => src.ItemPrice))
+                     .ForMember(dest => dest.State,opt => opt.MapFrom(src => src.PaymentMethod))
+                     .ForMember(dest => dest.TotalAmount,opt => opt.MapFrom(src => src.TotalItemsAmount)).ReverseMap();
 
         }
     }

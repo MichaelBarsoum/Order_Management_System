@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Order_Management_System.CORE\Order_Management_System.CORE.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

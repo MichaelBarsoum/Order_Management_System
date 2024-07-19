@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Order_Management_System.Repositories.Helpers;
+using Order_Management_System.CORE.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,6 @@ namespace Order_Management_System.Repository.Configurations
         public void Configure(EntityTypeBuilder<PaymentMethods> builder)
         {
             builder.HasKey(PM => PM.Id);
-            builder.HasMany(PM => PM.orders).WithOne();
         }
     }
 }

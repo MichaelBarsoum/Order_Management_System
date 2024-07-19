@@ -1,4 +1,5 @@
 ﻿using Order_Management_System.CORE.Contexts;
+using Order_Management_System.CORE.Helpers;
 using Order_Management_System.Repositories.Models;
 using System.Text.Json;
 
@@ -20,6 +21,7 @@ namespace Order_Management_System.Repository.DataSeed
                     await dbContext.SaveChangesAsync();
                 }
             }
+
             // Seed Invoice Data
             if (!dbContext.Invoices.Any())
             {
@@ -32,6 +34,7 @@ namespace Order_Management_System.Repository.DataSeed
                     await dbContext.SaveChangesAsync();
                 }
             }
+
             // Seed OrderItems Data
             if (!dbContext.OrderItems.Any())
             {
@@ -54,6 +57,19 @@ namespace Order_Management_System.Repository.DataSeed
                 {
                     foreach (var product in Products)
                         await dbContext.Set<Product>().AddAsync(product);
+                    await dbContext.SaveChangesAsync();
+                }
+            }
+
+            // Seed Payment Method 
+            if (!dbContext.PaymentMethods.Any())
+            {
+                var Paymentdata = File.ReadAllText("../Order_Management_System.Repository/DataSeed/Data/Payment_Methods_MOCK_DATA.json");
+                var Methods = JsonSerializer.Deserialize<List<PaymentMethods>>(Paymentdata);
+                if (Methods?.Count > 0)
+                {
+                    foreach (var method in Methods)
+                        await dbContext.Set<PaymentMethods>().AddAsync(method);
                     await dbContext.SaveChangesAsync();
                 }
             }

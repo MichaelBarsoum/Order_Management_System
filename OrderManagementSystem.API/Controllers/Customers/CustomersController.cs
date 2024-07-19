@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Order_Management_System.CORE.Contracts;
 using Order_Management_System.Repositories.Models;
-using OrderManagementSystem.API.DTOs.Customer;
+using OrderManagementSystem.API.DTOs.customer;
 using OrderManagementSystem.API.DTOs.Order;
 using OrderManagementSystem.API.Errors;
 

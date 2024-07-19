@@ -15,7 +15,6 @@ namespace Order_Management_System.CORE.Models.OrderAggregate
             ProductID = productID;
             ProductName = productName;
         }
-
         public int Id { get; set; }
         public int ProductID { get; set; }
         public string ProductName { get; set; }

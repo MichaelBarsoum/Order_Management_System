@@ -18,6 +18,7 @@ using Order_Management_System.CORE.Contracts.Services.Invoices;
 using Order_Management_System.Services.Services.INVOICE;
 using Order_Management_System.Repository.OrderState;
 using Order_Management_System.CORE.OrderState;
+using Order_Management_System.Services.Services.Payment.PayPal;
 
 namespace OrderManagementSystem.API.Custom
 {
@@ -25,7 +26,7 @@ namespace OrderManagementSystem.API.Custom
     {
         public static IServiceCollection ApplyServices(this IServiceCollection Services)
         {
-            //Services.AddScoped<RoleManager<User>>();
+            
             Services.AddScoped<IOrderState, OrderState>();
             Services.AddScoped<IOrderServices, OrderServices>();
             Services.AddScoped<IInvoiceService, InvoiceService>();

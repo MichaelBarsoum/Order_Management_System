@@ -16,6 +16,7 @@ using Order_Management_System.Repository.DataSeed;
 using Order_Management_System.Repository.DataSeed.IdentitySeed;
 using Order_Management_System.Services.Helpers;
 using Order_Management_System.Services.Services;
+using Order_Management_System.Services.Services.Payment.PayPal;
 using OrderManagementSystem.API.Custom;
 using OrderManagementSystem.API.Errors;
 using OrderManagementSystem.API.MiddleWare;
@@ -49,6 +50,8 @@ namespace OrderManagementSystem.API
                 Options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
             });
 
+            builder.Services.Configure<PaypalOptions>(builder.Configuration.GetSection("PayPalSettings"));
+            
             builder.Services.ApplyServices();
 
 

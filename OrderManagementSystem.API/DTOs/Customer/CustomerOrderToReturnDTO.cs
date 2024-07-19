@@ -2,7 +2,7 @@
 using Order_Management_System.Repositories.Models;
 using OrderManagementSystem.API.DTOs.Order;
 
-namespace OrderManagementSystem.API.DTOs.Customer
+namespace OrderManagementSystem.API.DTOs.customer
 {
     public class CustomerOrderToReturnDTO
     {

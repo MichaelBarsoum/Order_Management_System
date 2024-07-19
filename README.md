@@ -18,6 +18,7 @@ $$$ Features
 - Dependency injection for managing Services lifetimes.
 - Secure API endpoints with JWT.
 $$$ Prerequisites : Before you begin, ensure you have met the following requirements:
+
 - .NET 6 SDK
 - SQL Server
 - Visual Studio

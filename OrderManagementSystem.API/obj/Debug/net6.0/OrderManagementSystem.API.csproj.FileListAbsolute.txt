@@ -167,3 +167,7 @@ D:\OrderManagementSystem\OrderManagementSystem.API\obj\Debug\net6.0\OrderManagem
 D:\OrderManagementSystem\OrderManagementSystem.API\obj\Debug\net6.0\OrderManagementSystem.API.genruntimeconfig.cache
 D:\OrderManagementSystem\OrderManagementSystem.API\obj\Debug\net6.0\ref\OrderManagementSystem.API.dll
 D:\OrderManagementSystem\OrderManagementSystem.API\obj\Debug\net6.0\OrderManagementSystem.API.sourcelink.json
+D:\OrderManagementSystem\OrderManagementSystem.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\OrderManagementSystem\OrderManagementSystem.API\bin\Debug\net6.0\PayPal.dll
+D:\OrderManagementSystem\OrderManagementSystem.API\bin\Debug\net6.0\PayPalCheckoutSdk.DotNet6.dll
+D:\OrderManagementSystem\OrderManagementSystem.API\bin\Debug\net6.0\PayPalHttpRequest.DotNet6.dll

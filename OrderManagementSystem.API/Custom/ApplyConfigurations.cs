@@ -19,6 +19,8 @@ using Order_Management_System.Services.Services.INVOICE;
 using Order_Management_System.Repository.OrderState;
 using Order_Management_System.CORE.OrderState;
 using Order_Management_System.Services.Services.Payment.PayPal;
+using Order_Management_System.Services.Services.Payment;
+using Order_Management_System.CORE.Contracts.Services.Payments;
 
 namespace OrderManagementSystem.API.Custom
 {
@@ -26,7 +28,8 @@ namespace OrderManagementSystem.API.Custom
     {
         public static IServiceCollection ApplyServices(this IServiceCollection Services)
         {
-            
+           
+            Services.AddSingleton(typeof(IPayPalService) ,typeof(PayPalService));
             Services.AddScoped<IOrderState, OrderState>();
             Services.AddScoped<IOrderServices, OrderServices>();
             Services.AddScoped<IInvoiceService, InvoiceService>();

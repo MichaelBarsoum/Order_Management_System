@@ -10,11 +10,11 @@ namespace OrderManagementSystem.API.Controllers.Payments
     public class PaypalPaymentController : ControllerBase
     {
 
-        [HttpGet]
-        public Task<ActionResult> CreateConnection()
-        {
+        //[HttpGet]
+        //public Task<ActionResult> CreateConnection()
+        //{
 
-        }
+        //}
 
 
 
